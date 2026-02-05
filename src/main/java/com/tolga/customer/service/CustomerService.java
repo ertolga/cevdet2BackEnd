@@ -22,4 +22,9 @@ public class CustomerService {
     public List<Customer> findAll() {
         return repository.findAll();
     }
+
+    public Customer findById(Long id) {
+        return repository.findById(id).orElseThrow();
+    }
+
 }

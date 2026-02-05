@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import com.tolga.customer.dto.UpdateIbanRequest;
+
+
 @RestController
 @RequestMapping("/customers")
 public class CustomerController {
@@ -42,4 +45,16 @@ public class CustomerController {
     public List<Customer> getAll() {
         return service.findAll();
     }
+
+    @PutMapping("/{id}/iban")
+    public void updateIban(
+            @PathVariable Long id,
+            @RequestBody UpdateIbanRequest request
+    ) {
+        Customer customer = service.findById(id);
+        customer.setNlIban(request.getIban());
+        service.save(customer);
+    }
+
+
 }

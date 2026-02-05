@@ -54,4 +54,17 @@ public class Customer {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    @Column(name = "nl_iban")
+    private String nlIban;
+
+    public String getNlIban() {
+        return nlIban;
+    }
+
+    public void setNlIban(String nlIban) {
+        this.nlIban = nlIban;
+    }
+
+
 }
