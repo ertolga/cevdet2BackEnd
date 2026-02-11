@@ -2,6 +2,8 @@ package com.tolga.customer.model;
 
 import jakarta.persistence.*;
 
+
+
 @Entity
 @Table(name = "customer")
 public class Customer {
@@ -17,10 +19,11 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String fullName, String email, String phone) {
+    public Customer(String fullName, String email, String phone, String password) {
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
+        this.password = password;
     }
 
     public Long getId() {
@@ -64,6 +67,17 @@ public class Customer {
 
     public void setNlIban(String nlIban) {
         this.nlIban = nlIban;
+    }
+
+    @Column(name = "password")
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 

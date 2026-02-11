@@ -1,9 +1,7 @@
 package com.tolga.customer.dto;
 
-public class CustomerRequest {
+public class LoginResponse {
+    public Long id;
     public String fullName;
     public String email;
-    public String phone;
-    public String password;
 }
-

@@ -6,8 +6,15 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+
+
 @Service
 public class CustomerService {
+
+    public Customer findByEmail(String email) {
+        return repository.findByEmail(email);
+    }
 
     private final CustomerRepository repository;
 

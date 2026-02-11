@@ -10,7 +10,6 @@ import java.util.List;
 
 import com.tolga.customer.dto.UpdateIbanRequest;
 
-
 @RestController
 @RequestMapping("/customers")
 public class CustomerController {
@@ -27,7 +26,8 @@ public class CustomerController {
         Customer customer = new Customer(
                 request.fullName,
                 request.email,
-                request.phone
+                request.phone,
+                request.password
         );
 
         Customer saved = service.save(customer);
@@ -55,6 +55,4 @@ public class CustomerController {
         customer.setNlIban(request.getIban());
         service.save(customer);
     }
-
-
 }
