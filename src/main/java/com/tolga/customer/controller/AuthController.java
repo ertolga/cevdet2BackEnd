@@ -31,7 +31,11 @@ public class AuthController {
 
         LoginResponse response = new LoginResponse();
         response.id = customer.getId();
-        response.fullName = customer.getFullName();
+
+        // ARTIK BİRLEŞTİRME YOK! Doğrudan iki ayrı alan olarak Android'e fırlatıyoruz
+        response.firstName = customer.getFirstName();
+        response.lastName = customer.getLastName();
+
         response.email = customer.getEmail();
 
         return response;
